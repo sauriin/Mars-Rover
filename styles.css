@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+  }
+  
+  .title {
+    font-family: orbitron, sans-serif;
+    margin-bottom: 20px;
+    color: #335;
+  }
+  .mars {
+    background-color: crimson;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .plateau {
+    --buggy-width: 20;
+    --buggy-width-px: calc(var(--buggy-width) * 1px);
+    --buggy-height: 32;
+    --buggy-height-px: calc(var(--buggy-height) * 1px);
+    --plateau-height: 360;
+    --plateau-height-px: calc(var(--plateau-height) * 1px);
+    position: relative;
+    margin: 0px auto;
+    width: var(--plateau-height-px);
+    max-width: 100%;
+    height: var(--plateau-height-px);
+    background: indianred;
+    background-image: linear-gradient(
+        to right,
+        #644 1%,
+        transparent 1%,
+        transparent 99%,
+        #644 99%
+      ),
+      linear-gradient(#644 1%, transparent 1%, transparent 99%, #644 99%);
+    background-size: 20% 20%; /* initial grid */
+    /*   border: 20px solid crimson; */
+    box-sizing: border-box;
+  }
+  .rover {
+    content: "";
+    color: white;
+    text-shadow: 1px 2px 2px #333;
+    text-align: center;
+    line-height: var(--buggy-height-px);
+    font-family: orbitron, sans-serif;
+    font-size: 1.1em;
+    position: absolute;
+    width: var(--buggy-width-px);
+    height: var(--buggy-height-px);
+    border-top: white solid 2px;
+    border-bottom: #ff2222 solid 2px;
+    border-radius: 40% 40% 6px 6px;
+    box-sizing: border-box;
+    box-shadow: 0 -30px 10px 0px rgba(255, 255, 255, 0.9),
+      0 3px 10px 0 rgba(255, 0, 0, 0.5), 0 0 10px 2px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+    left: calc(0% - 0.5 * var(--buggy-width-px)); /* set x coords to 0 */
+    bottom: calc(0% - 0.5 * var(--buggy-height-px)); /* set y coords to 0 */
+  }
+  
+  .rover1 {
+    background-color: royalblue;
+  }
+  .rover1-animation {
+    animation: rover1moves linear forwards;
+  }
+  @keyframes roover1moves {
+    0% {
+      transform: translatey(-100px);
+    }
+    100% {
+      transform: translatey(-200px);
+    }
+  }
+  .rover2 {
+    background-color: orange;
+  }
+  .rover2-animation {
+    animation: rover2moves linear forwards;
+  }
+  .compass {
+    --compass-height: 100px;
+    --compass-width: 50px;
+    position: absolute;
+    width: var(--compass-width);
+    height: var(--compass-height);
+    left: calc(var(--compass-width) / -0.75);
+    text-align: center;
+    color: #223;
+    font-family: orbitron;
+  }
+  .compass .north {
+    font-size: 1em;
+    margin: 0;
+    font-weight: bold;
+  }
+  .compass .arrow {
+    font-size: 2em;
+    margin: -0.3em;
+  }
+  
+  /* Materialize Styles */
+  
+  /* label color */
+  .input-field label {
+    color: #779;
+  }
+  .row {
+    margin-bottom: 0px;
+  }
+  label.active {
+    margin-top: -6px;
+  }
+  input {
+    margin-bottom: 4px !important;
+  }
+  

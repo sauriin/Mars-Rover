@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css"/>
+</head>
+<body>
+    
+    <div class="container center">
+        <h4 class="title">- Mars Rover Exercise -</h4>
+      </div>
+      <div class="container">
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="col s2">
+                <h5>Max X&Y</h5>
+              </div>
+              <div class="input-field col s4">
+                <input id="plateau-max-xy" type="text" class="validate" pattern="^([4-9]|1[0-4])[ ,]([4-9]|1[0-4])$" value="8 8">
+                <span id="plateau-max-xy-helper" class="helper-text" data-error="✘ Values must be between 4 & 14" data-success="✔︎ OK"></span>
+                <label for="plateau-max-xy">min 4 4, max 14 14, eg. 10 4</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s2">
+                <h5 class="blue-text">Rover 1</h5>
+              </div>
+              <div class="input-field col s4">
+                <input id="rover1-start-xyd" type="text" class="validate" pattern="^([0-9]|1[0-4])[ ,]([0-9]|1[0-4])[ ,][NESWnesw]$" value="2 3 N">
+                <span id="rover1-start-xyd-helper" class="helper-text" data-error="✘ Input is not valid" data-success="✔︎ OK"></span>
+                <label for="rover1-start-xyd">Start coords & direction (N,E,S,W), eg. 0 0 N</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="rover1-instructions" type="text" class="validate" pattern="^[MLRmlr]+$" value="MRMLMMLMMRRM">
+                <span id="rover1-instructions-helper" class="helper-text" data-error="✘ Characters L,R,M only" data-success="✔︎ OK"></span>
+                <label for="rover1-instructions">Instructions (L-Left, R-Right, M-Move), eg. RMLMRM</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s2">
+                <h5 class="amber-text">Rover 2</h5>
+              </div>
+              <div class="input-field col s4">
+                <input id="rover2-start-xyd" type="text" class="validate" pattern="^([0-9]|1[0-4])[ ,]([0-9]|1[0-4])[ ,][NESWnesw]$" value="4 4 E">
+                <span id="rover2-start-xyd-helper" class="helper-text" data-error="✘ Input is not valid" data-success="✔︎ OK"></span>
+                <label for="rover2-start-xyd">Start coords & direction (N,E,S,W), eg. 0 0 E</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="rover2-instructions" type="text" class="validate" pattern="^[MLRmlr]+$" value="MMLMLMMRRMMMLMRRM">
+                <span id="rover2-instructions-helper" class="helper-text" data-error="✘ Characters L,R,M only" data-success="✔︎ OK"></span>
+                <label for="rover2-instructions">Instructions (L-Left, R-Right, M-Move), eg. RMLMRM</label>
+              </div>
+            </div>
+            <div class="col s9"></div>
+            <a class="col s3 waves-effect waves-light btn" id="explore-btn">Explore</a>
+          </form>
+        </div>
+      </div>
+      <div class="container mars">
+        <div class="plateau" id="plateau-grid">
+          <span class="compass">
+            <p class="north">N</p>
+            <p class="arrow">↑</p>
+          </span>
+          <div id="rover1-buggy" class="rover rover1">1</div>
+          <div id="rover2-buggy" class="rover rover2">2</div>
+        </div>
+        <div class="center">
+          <p>Final coords & direction of Rover 1:
+          <h5 id="rover1-finalXYD"></h5>
+          </p>
+          <p>Final coords & direction of Rover 2:
+          <h5 id="rover2-finalXYD"></h5>
+          </p>
+        </div>
+      </div>
+      <script href="./script.js"></script>
+</body>
+</html>
